@@ -49,7 +49,7 @@
 <button onclick="startLoading()" class="special-btn">
   🎬 Watch Something Special
 </button>
-    <button class="glow-btn" onclick="startLoading()">🎬 Watch Something Special</button>
+  
 </div>
 
 <!-- Loading Screen -->
@@ -70,16 +70,23 @@
 
 <script>
 function startLoading() {
-    document.getElementById("loadingScreen").style.display = "flex";
+  document.getElementById("loadingScreen").style.display = "flex";
 
-    setTimeout(function() {
-        document.getElementById("loadingScreen").style.display = "none";
-        document.getElementById("videoPopup").style.display = "flex";
-    }, 2000);
+  setTimeout(function() {
+    document.getElementById("loadingScreen").style.display = "none";
+    document.getElementById("videoPopup").style.display = "flex";
+
+    var video = document.getElementById("specialVideo");
+    video.play();
+
+  }, 2000);
 }
 
 function closeVideo() {
-    document.getElementById("videoPopup").style.display = "none";
+  var video = document.getElementById("specialVideo");
+  video.pause();
+  video.currentTime = 0;
+  document.getElementById("videoPopup").style.display = "none";
 }
 </script>
 
@@ -107,6 +114,7 @@ function closeModal(){
 
 </body>
 </html>
+
 
 
 
