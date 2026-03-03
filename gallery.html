@@ -47,7 +47,7 @@
         So I made this one quietly, patiently, and with a lot of heart.
     </p>
 <button onclick="startLoading()" class="special-btn">
-  🎬 Watch Special Video
+  🎬 Watch Something Special
 </button>
     <button class="glow-btn" onclick="startLoading()">🎬 Watch Something Special</button>
 </div>
@@ -62,7 +62,7 @@
 <div id="videoPopup" class="video-popup">
     <div class="video-content">
         <span class="close-btn" onclick="closeVideo()">×</span>
-        <video controls playsinline>
+        <video id="specialVideo" controls playsinline>
   <source src="anha.mp4" type="video/mp4">
 </video>
     </div>
@@ -107,6 +107,7 @@ function closeModal(){
 
 </body>
 </html>
+
 
 
 
