@@ -89,6 +89,27 @@ function closeVideo() {
   document.getElementById("videoPopup").style.display = "none";
 }
 </script>
+  <!-- 🎮 Doraemi Birthday Game -->
+
+<section class="birthday-game">
+
+<h2>🎮 Doraemi Birthday Quest</h2>
+<p>Tap the gifts to reveal your surprises 🎁</p>
+
+<div class="gift-grid">
+
+<div class="gift" onclick="openGift(this,0)">🎁</div>
+<div class="gift" onclick="openGift(this,1)">🎁</div>
+<div class="gift" onclick="openGift(this,2)">🎁</div>
+<div class="gift" onclick="openGift(this,3)">🎁</div>
+<div class="gift" onclick="openGift(this,4)">🎁</div>
+<div class="gift" onclick="openGift(this,5)">🎁</div>
+
+</div>
+
+<div id="gameMessage"></div>
+
+</section>
 
 <div class="back-btn">
   <a href="index.html">← Back to Birthday Page</a>
@@ -114,6 +135,7 @@ function closeModal(){
 
 </body>
 </html>
+
 
 
 
