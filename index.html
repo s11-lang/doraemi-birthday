@@ -18,6 +18,7 @@
 
 <!-- HERO -->
 <section class="hero">
+<div class="card hidden">
   <h1 class="hero-title">
 🎀 Happy Birthday Anha 🎀
 </h1>
@@ -34,6 +35,7 @@
 <!-- BIRTHDAY WISHES SECTION -->
 <section id="birthday-wishes" class="glass-section">
   <h2>Something For You 🌸</h2>
+  <div class="card hidden">
 
   <p>
     Happy Birthday Doraemii 🤍  
@@ -59,6 +61,7 @@
 <!-- OUR MOMENTS -->
 <section class="timeline-section">
   <h2>Little Moments That Became Important ✨</h2>
+  <div class="card hidden">
 
   <div class="timeline">
     <div class="timeline-item">
@@ -88,9 +91,11 @@
 <div class="secret-container">
     <h2>🔒 A Private Note</h2>
     <p>This part is protected. Only someone special can unlock it.</p>
+  <div class="card hidden">
 
     <input type="password" id="passwordInput" placeholder="Enter the secret code 💭">
     <button onclick="checkPassword()">Unlock</button>
+    <button onclick="unlock()">Unlock</button>
 
     <p id="errorMsg" class="error-msg"></p>
 
@@ -113,7 +118,7 @@
 <script>
 function checkPassword() {
     const password = document.getElementById("passwordInput").value;
-    const correctPassword = "anha";  // 👈 Yaha apna password change kar
+    const correctPassword = "doraemi";  // 👈 Yaha apna password change kar
 
     if(password === correctPassword) {
         document.getElementById("secretNote").style.display = "block";
@@ -169,3 +174,4 @@ function checkPassword() {
 </body>
 
 </html>
+
