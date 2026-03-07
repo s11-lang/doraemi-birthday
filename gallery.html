@@ -89,37 +89,7 @@ function closeVideo() {
   document.getElementById("videoPopup").style.display = "none";
 }
 </script>
-<section class="unlock-section">
 
-<h2 class="unlock-title">Unlock Your Birthday Surprise</h2>
-<p class="unlock-sub">Three small things… then your final surprise 🎁</p>
-
-<div class="unlock-cards">
-
-<div class="unlock-card" onclick="openCard(1)">
-<h3>📷 Memory</h3>
-<p>Tap to reveal</p>
-</div>
-
-<div class="unlock-card" onclick="openCard(2)">
-<h3>🎧 A Vibe</h3>
-<p>Tap to reveal</p>
-</div>
-
-<div class="unlock-card" onclick="openCard(3)">
-<h3>💌 A Message</h3>
-<p>Tap to reveal</p>
-</div>
-
-</div>
-
-<div id="revealBox"></div>
-
-<button id="finalUnlock" onclick="startLoading()" style="display:none;">
-🎁 Unlock Final Surprise
-</button>
-
-</section>
 
 <div class="back-btn">
   <a href="index.html">← Back to Birthday Page</a>
@@ -140,55 +110,13 @@ function openModal(element){
 function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
-let unlocked = 0;
 
-function openCard(type){
-
-const box = document.getElementById("revealBox");
-
-if(type===1){
-box.innerHTML="A small memory captured in time 📷";
-}
-
-if(type===2){
-box.innerHTML="Some moments deserve a soundtrack 🎧";
-}
-
-if(type===3){
-typeMessage("Some gifts are bought… some are built with effort.");
-}
-
-unlocked++;
-
-if(unlocked>=3){
-document.getElementById("finalUnlock").style.display="inline-block";
-}
-
-}
-
-function typeMessage(text){
-
-let i=0;
-let box=document.getElementById("revealBox");
-box.innerHTML="";
-
-let typing=setInterval(()=>{
-
-box.innerHTML+=text.charAt(i);
-i++;
-
-if(i>=text.length){
-clearInterval(typing);
-}
-
-},40);
-
-}
 </script>
 
 
 </body>
 </html>
+
 
 
 
