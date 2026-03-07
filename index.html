@@ -92,11 +92,12 @@
   <div class="card hidden">
 
    <input type="password" id="passwordInput" placeholder="Enter the secret code 💭">
-<button onclick="unlock()">Unlock</button>
+
+<button onclick="checkPassword()">Unlock</button>
 
 <p id="errorMsg" style="color:#ff4d6d;margin-top:10px;"></p>
 
-<div id="secretNote" class="hidden-note">
+<div id="secretNote" style="display:none;">
         <p>
         Anha, you’re not just someone I talk to — you’re someone who genuinely matters to me. 
         Over time, your presence became a comfort I started valuing more than I expected. 
@@ -113,23 +114,26 @@
     </div>
 </div>
 <script>
-function checkPassword() {
-    const password = document.getElementById("passwordInput").value;
-    const correctPassword = "doraemi";  // 👈 Yaha apna password change kar
 
-    if(password === correctPassword) {
-        document.getElementById("secretNote").style.display = "block";
-        document.getElementById("errorMsg").innerText = "";
-    } else {
-        document.getElementById("errorMsg").innerText = "Hmm… that's not the right key 💭";
-    }
+function checkPassword(){
+
+let password = document.getElementById("passwordInput").value;
+
+if(password === "doraemi"){
+
+document.getElementById("secretNote").style.display = "block";
+document.getElementById("errorMsg").innerText = "";
+
 }
-</script>
-<!-- BUTTON CENTER -->
-<section class="center-btn-section">
-  <a href="gallery.html" class="primary-btn big-btn">Memories With Doraemii 📸</a>
-</section>
+else{
 
+document.getElementById("errorMsg").innerText = "Hmm… that's not the right key 💭";
+
+}
+
+}
+
+</script>
 <!-- EXTRA LONG SWEET MESSAGE -->
 <section class="glass-section long-message">
   <h2>One More Thing 🌸</h2>
@@ -171,6 +175,7 @@ function checkPassword() {
 </body>
 
 </html>
+
 
 
 
