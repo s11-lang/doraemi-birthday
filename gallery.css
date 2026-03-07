@@ -301,61 +301,54 @@ body {
 .special-btn:hover {
   transform: scale(1.05);
 }
-/* 🎮 GAME */
-
-.birthday-game{
+.cake-game{
 text-align:center;
 margin-top:80px;
 }
 
-.gift-grid{
-display:grid;
-grid-template-columns:repeat(3,100px);
-gap:25px;
-justify-content:center;
-margin-top:30px;
+#gameArea{
+width:300px;
+height:400px;
+margin:auto;
+background:#ffeef5;
+border-radius:20px;
+position:relative;
+overflow:hidden;
 }
 
-.gift{
-font-size:55px;
-cursor:pointer;
-transition:transform .3s;
+#doraemi{
+position:absolute;
+bottom:10px;
+left:120px;
+font-size:45px;
 }
 
-.gift:hover{
-transform:scale(1.2) rotate(10deg);
-}
-
-.doraemi{
-font-size:65px;
-animation:pop .5s ease;
-}
-
-@keyframes pop{
-0%{transform:scale(0)}
-100%{transform:scale(1)}
-}
-
-#gameMessage{
-margin-top:30px;
-font-size:22px;
-color:#ff4e8b;
-font-weight:600;
-}
-
-/* 🎉 CONFETTI */
-
-.confetti{
-position:fixed;
-width:10px;
-height:10px;
-background:red;
-top:-10px;
-animation:fall 4s linear infinite;
+.cake{
+position:absolute;
+font-size:35px;
+top:-40px;
+animation:fall 4s linear;
 }
 
 @keyframes fall{
-to{
-transform:translateY(100vh);
+0%{top:-40px}
+100%{top:380px}
 }
+
+#score{
+margin-top:15px;
+font-size:20px;
+color:#ff4e8b;
 }
+
+.gameBtn{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+background:#ff4e8b;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
