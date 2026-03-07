@@ -89,21 +89,34 @@ function closeVideo() {
   document.getElementById("videoPopup").style.display = "none";
 }
 </script>
-<section class="cake-game">
+<section class="unlock-section">
 
-<h2>🎮 Doraemi Cake Catch</h2>
-<p>Help Doraemi catch the birthday cakes 🎂</p>
+<h2 class="unlock-title">Unlock Your Birthday Surprise</h2>
+<p class="unlock-sub">Three small things… then your final surprise 🎁</p>
 
-<div id="gameArea">
+<div class="unlock-cards">
 
-<div id="doraemi">🐱</div>
+<div class="unlock-card" onclick="openCard(1)">
+<h3>📷 Memory</h3>
+<p>Tap to reveal</p>
+</div>
+
+<div class="unlock-card" onclick="openCard(2)">
+<h3>🎧 A Vibe</h3>
+<p>Tap to reveal</p>
+</div>
+
+<div class="unlock-card" onclick="openCard(3)">
+<h3>💌 A Message</h3>
+<p>Tap to reveal</p>
+</div>
 
 </div>
 
-<div id="score">Score: 0</div>
+<div id="revealBox"></div>
 
-<button onclick="startGame()" class="gameBtn">
-Start Game
+<button id="finalUnlock" onclick="startLoading()" style="display:none;">
+🎁 Unlock Final Surprise
 </button>
 
 </section>
@@ -127,47 +140,48 @@ function openModal(element){
 function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
- let score=0;
-let gameInterval;
+let unlocked = 0;
 
-function startGame(){
+function openCard(type){
 
-score=0;
-document.getElementById("score").innerText="Score: 0";
+const box = document.getElementById("revealBox");
 
-gameInterval=setInterval(createCake,1000);
+if(type===1){
+box.innerHTML="A small memory captured in time 📷";
+}
 
-setTimeout(()=>{
-clearInterval(gameInterval);
-alert("🎉 Happy Birthday Anha! Final Score: "+score);
-},20000);
+if(type===2){
+box.innerHTML="Some moments deserve a soundtrack 🎧";
+}
+
+if(type===3){
+typeMessage("Some gifts are bought… some are built with effort.");
+}
+
+unlocked++;
+
+if(unlocked>=3){
+document.getElementById("finalUnlock").style.display="inline-block";
+}
 
 }
 
-function createCake(){
+function typeMessage(text){
 
-let cake=document.createElement("div");
+let i=0;
+let box=document.getElementById("revealBox");
+box.innerHTML="";
 
-cake.classList.add("cake");
-cake.innerHTML="🎂";
+let typing=setInterval(()=>{
 
-cake.style.left=Math.random()*260+"px";
+box.innerHTML+=text.charAt(i);
+i++;
 
-document.getElementById("gameArea").appendChild(cake);
-
-cake.onclick=function(){
-
-score++;
-
-document.getElementById("score").innerText="Score: "+score;
-
-cake.remove();
-
+if(i>=text.length){
+clearInterval(typing);
 }
 
-setTimeout(()=>{
-cake.remove();
-},4000);
+},40);
 
 }
 </script>
@@ -175,6 +189,7 @@ cake.remove();
 
 </body>
 </html>
+
 
 
 
