@@ -98,6 +98,7 @@
 <p id="errorMsg" style="color:#ff4d6d;margin-top:10px;"></p>
 
 <div id="secretNote" style="display:none;">
+<p id="typeMessage"></p>
         <p>
         Anha, you’re not just someone I talk to — you’re someone who genuinely matters to me. 
         Over time, your presence became a comfort I started valuing more than I expected. 
@@ -121,19 +122,52 @@ let password = document.getElementById("passwordInput").value;
 
 if(password === "doraemi"){
 
-document.getElementById("secretNote").style.display = "block";
-document.getElementById("errorMsg").innerText = "";
+document.getElementById("secretNote").style.display="block";
+document.getElementById("errorMsg").innerText="";
+
+confetti({
+particleCount:150,
+spread:90,
+origin:{y:0.6}
+});
+
+typeMessage();
 
 }
+
 else{
-
-document.getElementById("errorMsg").innerText = "Hmm… that's not the right key 💭";
+document.getElementById("errorMsg").innerText="Hmm… that's not the right key 💭";
+}
 
 }
+
+function typeMessage(){
+
+let text = "Anha... somewhere between normal conversations and small moments, you quietly became important to me. Your presence makes things feel calmer and lighter. I'm really grateful you're in my life. 🌸";
+
+let i=0;
+let speed=40;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typeMessage").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing,speed);
+
+}
+
+}
+
+typing();
 
 }
 
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <!-- EXTRA LONG SWEET MESSAGE -->
 <section class="glass-section long-message">
   <h2>One More Thing 🌸</h2>
@@ -175,6 +209,7 @@ document.getElementById("errorMsg").innerText = "Hmm… that's not the right key
 </body>
 
 </html>
+
 
 
 
