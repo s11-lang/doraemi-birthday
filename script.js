@@ -70,3 +70,18 @@ setTimeout(()=>{
 sparkle.remove();
 },500);
 });
+function unlock(){
+
+const password = document.getElementById("passwordInput").value;
+const correctPassword = "doraemi";
+
+if(password === correctPassword){
+document.getElementById("secretNote").style.display="block";
+document.getElementById("errorMsg").innerText="";
+}
+else{
+document.getElementById("errorMsg").innerText="Hmm… that's not the right key 💭";
+}
+
+}
+
