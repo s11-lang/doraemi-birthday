@@ -8,6 +8,9 @@
   
 </head>
 <body>
+  <audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
   <div class="stars"></div>
  <div class="petals"></div>
 <div class="floating-hearts"></div>
@@ -165,7 +168,41 @@ setTimeout(typing,speed);
 typing();
 
 }
+  function checkPassword(){
 
+let password = document.getElementById("passwordInput").value;
+
+if(password === "doraemi"){
+
+document.getElementById("secretNote").style.display="block";
+document.getElementById("errorMsg").innerText="";
+
+document.getElementById("bgMusic").play();
+
+confetti({
+particleCount:200,
+spread:100,
+origin:{y:0.6}
+});
+
+typeMessage();
+
+}
+else{
+document.getElementById("errorMsg").innerText="Hmm… that's not the right key 💭";
+}
+
+}
+function blowCandles(){
+
+confetti({
+particleCount:120,
+spread:80
+});
+
+alert("Make a wish Anha 🎂✨");
+
+}
 </script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <!-- EXTRA LONG SWEET MESSAGE -->
@@ -201,7 +238,7 @@ typing();
     Stay the way you are. Soft. Real. Genuine. 🌸
   </p>
 </section>
-<div class="cake">🎂</div>
+<div class="cake" onclick="blowCandles()">🎂</div>
 <footer>
   Made with patience, sincerity & quiet appreciation 🤍
 </footer>
@@ -209,6 +246,7 @@ typing();
 </body>
 
 </html>
+
 
 
 
