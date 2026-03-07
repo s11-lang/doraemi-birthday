@@ -301,54 +301,56 @@ body {
 .special-btn:hover {
   transform: scale(1.05);
 }
-.cake-game{
+.unlock-section{
 text-align:center;
-margin-top:80px;
+margin-top:90px;
 }
 
-#gameArea{
-width:300px;
-height:400px;
-margin:auto;
-background:#ffeef5;
-border-radius:20px;
-position:relative;
-overflow:hidden;
+.unlock-title{
+font-size:28px;
+margin-bottom:10px;
 }
 
-#doraemi{
-position:absolute;
-bottom:10px;
-left:120px;
-font-size:45px;
+.unlock-sub{
+color:#888;
+margin-bottom:30px;
 }
 
-.cake{
-position:absolute;
-font-size:35px;
-top:-40px;
-animation:fall 4s linear;
+.unlock-cards{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-@keyframes fall{
-0%{top:-40px}
-100%{top:380px}
+.unlock-card{
+width:150px;
+padding:25px;
+border-radius:18px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
 }
 
-#score{
-margin-top:15px;
+.unlock-card:hover{
+transform:translateY(-8px);
+}
+
+#revealBox{
+margin-top:40px;
 font-size:20px;
-color:#ff4e8b;
+min-height:60px;
 }
 
-.gameBtn{
-margin-top:15px;
-padding:10px 20px;
+#finalUnlock{
+margin-top:30px;
+padding:12px 30px;
 border:none;
-border-radius:25px;
+border-radius:30px;
 background:#ff4e8b;
 color:white;
 font-size:16px;
 cursor:pointer;
 }
-
