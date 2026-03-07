@@ -130,11 +130,57 @@ function openModal(element){
 function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
+  const messages = [
+"Happy Birthday Anha 🎂",
+"You make everything brighter ✨",
+"This website was made just for you 💖",
+"Doraemi is sending hugs 🐱",
+"You are truly special 🌸",
+"Final Surprise unlocked 🎬"
+];
+
+function openGift(element,index){
+
+element.innerHTML="🐱";
+element.classList.add("doraemi");
+
+document.getElementById("gameMessage").innerText=messages[index];
+
+launchConfetti();
+
+if(index==5){
+setTimeout(()=>{
+startLoading();
+},2000);
+}
+
+}
+
+function launchConfetti(){
+
+for(let i=0;i<20;i++){
+
+let confetti=document.createElement("div");
+confetti.classList.add("confetti");
+
+confetti.style.left=Math.random()*100+"vw";
+confetti.style.background=`hsl(${Math.random()*360},100%,50%)`;
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+confetti.remove();
+},4000);
+
+}
+
+}
 </script>
 
 
 </body>
 </html>
+
 
 
 
