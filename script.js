@@ -48,3 +48,25 @@ const observer = new IntersectionObserver(entries=>{
 document.querySelectorAll(".hidden").forEach(el=>{
   observer.observe(el);
 });
+
+const petalsContainer = document.querySelector(".petals");
+
+for(let i=0;i<20;i++){
+let petal = document.createElement("div");
+petal.className="petal";
+petal.innerHTML="🌸";
+petal.style.left=Math.random()*100+"vw";
+petal.style.animationDuration=(5+Math.random()*5)+"s";
+petalsContainer.appendChild(petal);
+}
+document.addEventListener("mousemove",e=>{
+let sparkle=document.createElement("div");
+sparkle.className="sparkle";
+sparkle.style.left=e.pageX+"px";
+sparkle.style.top=e.pageY+"px";
+document.body.appendChild(sparkle);
+
+setTimeout(()=>{
+sparkle.remove();
+},500);
+});
