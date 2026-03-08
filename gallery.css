@@ -354,5 +354,71 @@ particleCount:120,
 spread:80,
 origin:{y:0.6}
 });
+.gallery-card{
+background:white;
+padding:10px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transform:rotate(var(--rotate));
+opacity:0;
+animation:dropPhoto 1s ease forwards;
+}
+
+.gallery-card:nth-child(1){--rotate:-6deg;animation-delay:0.2s}
+.gallery-card:nth-child(2){--rotate:5deg;animation-delay:0.4s}
+.gallery-card:nth-child(3){--rotate:-4deg;animation-delay:0.6s}
+.gallery-card:nth-child(4){--rotate:7deg;animation-delay:0.8s}
+.gallery-card:nth-child(5){--rotate:-5deg;animation-delay:1s}
+
+@keyframes dropPhoto{
+0%{
+transform:translateY(-200px) scale(0.8);
+opacity:0;
+}
+100%{
+transform:translateY(0) rotate(var(--rotate));
+opacity:1;
+}
+}
+@keyframes fadeHeart{
+0%{
+opacity:1;
+transform:translateY(0);
+}
+100%{
+opacity:0;
+transform:translateY(-20px);
+}
+}
+.balloons span{
+position:fixed;
+bottom:-100px;
+font-size:24px;
+animation:balloonFloat 12s linear infinite;
+}
+
+@keyframes balloonFloat{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-120vh);
+}
+}
+body{
+animation:pageEntry 1s ease;
+}
+
+@keyframes pageEntry{
+0%{
+opacity:0;
+transform:scale(0.96);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+
 
 
