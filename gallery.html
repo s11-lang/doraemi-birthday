@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+  <div class="balloons"></div>
 <div class="sparkle-bg"></div>
 <div class="background-glow"></div>
 
@@ -125,12 +126,38 @@ s.style.left=Math.random()*100+"vw";
 s.style.animationDuration=(6+Math.random()*8)+"s";
 sparkleBg.appendChild(s);
 }
+  const balloons=document.querySelector(".balloons");
+
+for(let i=0;i<10;i++){
+let b=document.createElement("span");
+b.innerHTML="🎈";
+b.style.left=Math.random()*100+"vw";
+b.style.animationDuration=(8+Math.random()*5)+"s";
+balloons.appendChild(b);
+}
 
 </script>
+<script>
+document.addEventListener("mousemove",function(e){
+let heart=document.createElement("div");
 
+heart.innerHTML="💗";
+heart.style.position="fixed";
+heart.style.left=e.clientX+"px";
+heart.style.top=e.clientY+"px";
+heart.style.pointerEvents="none";
+heart.style.fontSize="12px";
+heart.style.animation="fadeHeart 1s linear";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),1000);
+});
+</script>
 
 </body>
 </html>
+
 
 
 
