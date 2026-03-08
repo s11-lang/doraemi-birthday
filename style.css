@@ -440,6 +440,20 @@ background:#fff0f6;
 padding:20px;
 border-radius:15px;
 }
+.center-btn-section{
+text-align:center;
+margin:60px 0;
+}
+
+.big-btn{
+font-size:20px;
+padding:16px 32px;
+}
+.primary-btn:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(255,105,180,0.4);
+}
+
 
 
 
