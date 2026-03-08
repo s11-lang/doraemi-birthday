@@ -5,9 +5,10 @@
   <title>Memories With Doraemii ✨</title>
   <link rel="stylesheet" href="gallery.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-
+<div class="sparkle-bg"></div>
 <div class="background-glow"></div>
 
 <section class="hero">
@@ -70,6 +71,11 @@
 
 <script>
 function startLoading() {
+  confetti({
+particleCount:120,
+spread:80,
+origin:{y:0.6}
+});
   document.getElementById("loadingScreen").style.display = "flex";
 
   setTimeout(function() {
@@ -110,12 +116,22 @@ function openModal(element){
 function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
+  const sparkleBg=document.querySelector(".sparkle-bg");
+
+for(let i=0;i<20;i++){
+let s=document.createElement("span");
+s.innerHTML="✨";
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(6+Math.random()*8)+"s";
+sparkleBg.appendChild(s);
+}
 
 </script>
 
 
 </body>
 </html>
+
 
 
 
